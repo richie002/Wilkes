@@ -1,0 +1,29 @@
+<h2>
+  Reservations
+  <button type="button" class="btn btn-primary float-right" [routerLink]="['/reservation/new']" >Create New Reservation</button>
+</h2>
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Party Name</th>
+      <th scope="col"  class="text-right">No of People</th>
+      <th scope="col">Reservation Date</th>
+      <th scope="col">Reservation Time</th>
+      <th scope="col">Reservation Fulfilled</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of reservations">
+      <td>{{row.firstName}} {{row.lastName}}</td>
+      <td class="text-right">{{row.numberOfPeople}}</td>
+      <td>{{row.reservationDate}}</td>
+      <td>{{row.reservationTime}}</td>
+      <td>{{row.reservationFulfilled}}</td>
+      <td><a routerLink='/reservation/edit/{{row.id}}' class="btn btn-link">
+        Edit
+    </a></td>
+
+  </tr>
+  </tbody>
+</table>
